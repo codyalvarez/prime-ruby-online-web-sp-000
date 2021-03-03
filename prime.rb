@@ -1,14 +1,11 @@
-def prime?(x)
-  if x == 1
-    return 1
-  elsif x < 1
-    return false
-  else
-    for y in 2..(x-1)
-      if (x % y) == 0
-        return false
-      end
-    end
+def prime?(number)
+start = 2
+if number > 1
+  range = (start..number-1).to_a
+  range.none? do |num_to_test|
+    number % num_to_test == 0
   end
-    true
+else
+  false
+end
 end
